@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import css from './ContactListItem.module.css';
-import { deleteContact } from 'redux/operations';
+import { deleteContact } from 'redux/contacts/operations';
 
 const ContactListItem = memo(({ id, name, number }) => {
   const dispatch = useDispatch();
