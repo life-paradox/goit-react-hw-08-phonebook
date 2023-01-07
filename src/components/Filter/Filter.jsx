@@ -1,6 +1,6 @@
+import { FormLabel } from 'components/StyledComponents/SC';
 import { useDispatch } from 'react-redux';
 import { setFilter } from 'redux/filter/filterSlice';
-import css from './Filter.module.css';
 
 const Filter = () => {
   const dispatch = useDispatch();
@@ -11,10 +11,10 @@ const Filter = () => {
   };
 
   return (
-    <label>
+    <FormLabel>
       Find contacts by name
-      <input type="text" onChange={filterHandler} className={css.filterInput} />
-    </label>
+      <input type="text" onChange={filterHandler} />
+    </FormLabel>
   );
 };
 

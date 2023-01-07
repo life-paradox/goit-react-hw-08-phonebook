@@ -1,5 +1,4 @@
 import React from 'react';
-import css from '../components/App.module.css';
 
 import ContactForm from '../components/ContactForm/ContactForm';
 import Filter from '../components/Filter/Filter';
@@ -9,6 +8,12 @@ import Loader from '../components/Loader/Loader';
 import { getIsLoading, getError } from 'redux/selectors';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/contacts/operations';
+import {
+  ContactsContainer,
+  Section,
+  StyledMain,
+  Title,
+} from 'components/StyledComponents/SC';
 
 const Contacts = () => {
   const dispatch = useDispatch();
@@ -20,18 +25,21 @@ const Contacts = () => {
   }, [dispatch]);
 
   return (
-    <main>
-      <div className={css.container}>
-        <h1 className={css.title}>Phonebook</h1>
-        <ContactForm />
+    <StyledMain>
+      <ContactsContainer>
+        <Section>
+          <Title>Add new contact</Title>
+          <ContactForm />
+        </Section>
+        <Section>
+          <Title>Contacts</Title>
+          <Filter />
 
-        <h2 className={css.title}>Contacts</h2>
-        <Filter />
-
-        {isLoading && !error && <Loader />}
-        <ContactList />
-      </div>
-    </main>
+          {isLoading && !error && <Loader />}
+          <ContactList />
+        </Section>
+      </ContactsContainer>
+    </StyledMain>
   );
 };
 

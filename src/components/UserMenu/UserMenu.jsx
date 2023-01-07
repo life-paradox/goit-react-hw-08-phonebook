@@ -1,3 +1,4 @@
+import { UserEmail } from 'components/StyledComponents/SC';
 import { useAuth } from 'hooks/useAuth';
 import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/auth/operations';
@@ -12,7 +13,7 @@ const UserMenu = () => {
 
   return (
     <div>
-      {email}
+      <UserEmail>{email}</UserEmail>
       <button type="button" onClick={handleLogOut}>
         Log Out
       </button>

@@ -1,3 +1,4 @@
+import { Form, FormBtn, FormLabel } from 'components/StyledComponents/SC';
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
 
@@ -19,8 +20,8 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={submitHandler}>
-      <label>
+    <Form onSubmit={submitHandler}>
+      <FormLabel>
         Email
         <input
           type="text"
@@ -30,14 +31,14 @@ const LoginForm = () => {
           required
           autoComplete="true"
         />
-      </label>
-      <label>
+      </FormLabel>
+      <FormLabel>
         Password
         <input type="password" name="password" title="Password" required />
-      </label>
+      </FormLabel>
 
-      <button>Log In</button>
-    </form>
+      <FormBtn>Log In</FormBtn>
+    </Form>
   );
 };
 

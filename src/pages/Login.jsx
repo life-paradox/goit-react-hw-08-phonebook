@@ -1,10 +1,14 @@
+import { Container, StyledMain } from 'components/StyledComponents/SC';
+
 const { default: LoginForm } = require('components/LoginForm/LoginForm');
 
 const Login = () => {
   return (
-    <main>
-      <LoginForm />
-    </main>
+    <StyledMain>
+      <Container>
+        <LoginForm />
+      </Container>
+    </StyledMain>
   );
 };
 

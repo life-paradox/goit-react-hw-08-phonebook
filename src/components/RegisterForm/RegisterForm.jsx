@@ -1,3 +1,4 @@
+import { Form, FormLabel } from 'components/StyledComponents/SC';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
 
@@ -21,8 +22,8 @@ const RegisterForm = () => {
   };
 
   return (
-    <form onSubmit={submitHandler}>
-      <label>
+    <Form onSubmit={submitHandler}>
+      <FormLabel>
         Name
         <input
           type="text"
@@ -32,8 +33,8 @@ const RegisterForm = () => {
           required
           autoComplete="false"
         />
-      </label>
-      <label>
+      </FormLabel>
+      <FormLabel>
         Email
         <input
           type="email"
@@ -43,14 +44,14 @@ const RegisterForm = () => {
           required
           autoComplete="true"
         />
-      </label>
-      <label>
+      </FormLabel>
+      <FormLabel>
         Password
         <input type="password" name="password" title="Password" required />
-      </label>
+      </FormLabel>
 
       <button type="submit">Sign up</button>
-    </form>
+    </Form>
   );
 };
 

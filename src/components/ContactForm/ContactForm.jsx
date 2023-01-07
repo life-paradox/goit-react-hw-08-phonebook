@@ -1,7 +1,7 @@
+import { Form, FormBtn, FormLabel } from 'components/StyledComponents/SC';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
-import css from './ContactForm.module.css';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
@@ -17,8 +17,8 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={submitHandler} className={css.form}>
-      <label className={css.label}>
+    <Form onSubmit={submitHandler}>
+      <FormLabel>
         Name
         <input
           type="text"
@@ -26,12 +26,11 @@ const ContactForm = () => {
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
-          className={css.input}
           autoComplete="false"
         />
-      </label>
+      </FormLabel>
 
-      <label className={css.label}>
+      <FormLabel>
         Number
         <input
           type="tel"
@@ -39,13 +38,12 @@ const ContactForm = () => {
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
-          className={css.input}
           autoComplete="false"
         />
-      </label>
+      </FormLabel>
 
-      <button type="submit">Add contact</button>
-    </form>
+      <FormBtn type="submit">Add contact</FormBtn>
+    </Form>
   );
 };
 

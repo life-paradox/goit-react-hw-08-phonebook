@@ -1,12 +1,16 @@
+import { Container, StyledMain } from 'components/StyledComponents/SC';
+
 const {
   default: RegisterForm,
 } = require('components/RegisterForm/RegisterForm');
 
 const Register = () => {
   return (
-    <main>
-      <RegisterForm />
-    </main>
+    <StyledMain>
+      <Container>
+        <RegisterForm />
+      </Container>
+    </StyledMain>
   );
 };
 

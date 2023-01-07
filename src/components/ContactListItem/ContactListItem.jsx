@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import css from './ContactListItem.module.css';
 import { deleteContact } from 'redux/contacts/operations';
+import { Item } from 'components/StyledComponents/SC';
 
 const ContactListItem = memo(({ id, name, number }) => {
   const dispatch = useDispatch();
@@ -12,14 +12,14 @@ const ContactListItem = memo(({ id, name, number }) => {
   };
 
   return (
-    <li className={css.item}>
+    <Item>
       <span>
         {name}: {number}
       </span>
-      <button className={css.deleteBtn} id={id} onClick={onDelete}>
+      <button id={id} onClick={onDelete}>
         Delete
       </button>
-    </li>
+    </Item>
   );
 });
 

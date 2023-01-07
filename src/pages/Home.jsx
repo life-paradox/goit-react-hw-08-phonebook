@@ -1,5 +1,13 @@
+import { StyledMain, Welcome } from 'components/StyledComponents/SC';
+
 const Home = () => {
-  return <div>Welcome to Phonebook</div>;
+  return (
+    <StyledMain>
+      <Welcome>
+        Welcome <br /> to <br /> Phonebook
+      </Welcome>
+    </StyledMain>
+  );
 };
 
 export default Home;

@@ -1,4 +1,5 @@
 import ContactListItem from 'components/ContactListItem/ContactListItem';
+import { StyledList } from 'components/StyledComponents/SC';
 import { useSelector } from 'react-redux';
 import { getContacts, getFilter } from 'redux/selectors';
 
@@ -22,7 +23,7 @@ const ContactList = () => {
   }
 
   return (
-    <ul>
+    <StyledList>
       {visibleContacts.map(contact => {
         return (
           <ContactListItem
@@ -33,7 +34,7 @@ const ContactList = () => {
           />
         );
       })}
-    </ul>
+    </StyledList>
   );
 };
 
